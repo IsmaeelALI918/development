@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--links the css file to the html code-->
+<link rel="stylesheet" href="static/file.css">
+</head>
+
+<body>
+<!--when the login button is clicked it will show the function cretaed by the code underneath the divider name id01-->
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+<div id="id01" class="login">
+  <!--creates a form to login and sends the data below it to a server to create/update the program-->
+  <form class="login-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <!--when the close button (x) in the top right corner is clicked, it closes the login form-->
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close login">&times;</span>
+      <!--displays the user icon-->
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1J4kLFNDS20u2WTI_02JgqXD2zffjeN7jY07WiAPRBA&s" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <!--creates the email input box-->
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter email" name="email" required>
+
+      <!--creates the password input box-->
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <!--creates the login button that submits the form-->
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div> 
+
+    <div class="container" style="background-color:#f1f1f1">
+      <!--creates a cancel button that when clicked, the form disappears-->
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <!--creates a forgot password link on the same line as the cancel button-->
+      <span class="psw"><a href="#">forgot password?</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the login form
+var login = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the form, it closes it
+window.onclick = function(event) {
+    if (event.target == login) {
+        login.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
